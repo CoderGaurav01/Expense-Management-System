@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+         <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--Latest compiled and minified JavaScript--> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <style>
+            .navbar-brand{
+               font-size: 25px;
+               padding-left: 1px; 
+            }
+            .header{
+                color:#fff;
+                border-color: #080808;
+                min-height: 50px;
+                border: 1px solid transparent; 
+            }
+            #banner-image{
+                padding-bottom: 50px;
+                padding-top: 75px;
+                text-align: center;
+                color: #f8f8f8;
+                background: url(https://www.tmf-group.com/-/media/images/corporate-site/background-images/service-line/accounting-and-tax/1500x904-accounting-and-tax-concept.jpg?h=904&la=en&w=1500&hash=B7E8523FBC48A5E4844E46943D7CE817C155D7F3)no-repeat center;
+                background-size: cover;
+                
+            }
+            .content{
+                min-height: 600px;
+            }
+            #banner_content{
+                position: relative;
+                padding-top: 6%;
+                padding-bottom: 6%;
+                margin-top: 12%; 
+                margin-bottom: 12%;
+                background-color: rgba(0, 0, 0, 0.6);
+                max-width: 660px; 
+                border-radius: 50%;
+                height: 100%;
+                width: 100%;
+            }
+            .end1{
+                padding: 10px;
+                background-color: #101010;
+                color:#9d9d9d;
+                bottom: 0;
+                width: 100%;
+                position: relative;
+                bottom: 0px;
+            }
+            
+        </style>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                            data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       
+                        <a href="dashboard.html" class="navbar-brand">Expense Management System</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#register" rel="modal:open"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#login" rel="modal:open"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+               
+        </div>
+        <div id="login" class="modal">   
+            
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1>LOGIN</h1>
+                    </div>
+                    <div class="panel-body">
+                        <form>                                
+                            <div class="form-group">
+                                <input type="email" class="form-control"  placeholder="Email" name="e-mail" required = "true">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" name="password" required = "true">
+                            </div>
+                            <button type="submit" class="btn"><a href="dashboard.html">Login</a></button>
+                        </form>
+                    </div><br>
+                    <div class="panel-footer">
+                        <p>Don't have an account? <a href="#register" rel="modal:open">Register</a></p>
+                    </div>
+                </div>
+            
+        </div>
+        <div id="register" class="modal">
+            <h1>SIGN UP</h1><br>
+            <form>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Name" name="name" required="true">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control"  placeholder="Email" name="e-mail" required="true">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password" required="true">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control"  placeholder="Contact" name="contact" required="true">
+                </div>
+                <div class="form-group">
+                    <input  type="text" class="form-control"  placeholder="City" name="city" required="true">
+                </div>
+                <div class="form-group">
+                    <input  type="text" class="form-control"  placeholder="Address" name="address" required="true">
+                </div>
+                <button type="submit" class="btn"><a href="dashboard.html">Sign Up</a></button>
+            </form>
+        </div>
+        <div class="content">
+            <div id="banner-image">
+                <div class="container" align="center">
+                    <div id="banner_content">
+                        <h2>Your Own Expense Handbook</h2>
+                        <p>TRY NOW</p>
+                        <a href="#login" rel="modal:open" class ="btn btn-danger btn-lg active">LOGIN</a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="end1">
+            <div class="container">
+                <p align="center">Copyright © SSM TECH. All Rights Reserved | Contact Us: +91 90000 00000</p>
+            </div>
+        </footer>
+        
+    </body>
+</html>

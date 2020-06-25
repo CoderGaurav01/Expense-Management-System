@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+         <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css"/><!--jQuery library--> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--Latest compiled and minified JavaScript--> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <style>
+            #return{
+                float: right;
+                margin-bottom: 20px;
+                margin-right: 10px;
+            }
+            .end1{
+                padding: 10px;
+                background-color: #101010;
+                color:#9d9d9d;
+                width: 100%;
+                margin-top: 290px;
+            }
+            /* The sidepanel menu */
+           .sidepanel {
+                height: 100%; /* Specify a height */
+                width: 0; /* 0 width - change this with JavaScript */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Stay on top */
+                top: 0;
+                left: 0;
+                background-color: #FBFBFB; /* Black*/
+                overflow-x: hidden; /* Disable horizontal scroll */
+                padding-top: 50px; /* Place content 60px from the top */
+                transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+            }
+
+/* The sidepanel links */
+            .sidepanel a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #111;
+                display: block;
+                transition: 0.3s;
+            }
+
+/* When you mouse over the navigation links, change their color */
+            .sidepanel a:hover {
+                color: #818181;
+            }
+
+/* Position and style the close button (top right corner) */
+            .sidepanel .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+/* Style the button that is used to open the sidepanel */
+            .openbtn {
+                font-size: 20px;
+                cursor: pointer;
+                background-color: #F3F3FF;
+                color: white;
+                padding: 10px 15px;
+                padding-left: 25px;
+                border: none;
+            }
+            #btn{
+                color: #111;
+            }
+
+            .openbtn:hover {
+                background-color: #EFEFF3;
+            }
+            .option{
+                float: left;
+                font-size: 20px;
+                position: absolute;
+                top: 0;
+                margin-top: 12px;   
+                padding: 8px 10px 8px 0px;
+                text-decoration: none;
+                
+                color: #4caf50;
+                display: block;
+                transition: 0.3s;
+            }
+            .option:hover{
+                
+                color: #DAF7A6;
+            }
+            .header{
+                background-color: #F3F3FF;
+                text-align: center;
+                padding-top: 10px;
+                
+            }
+            .content{
+                margin: 200px 0px 0px 300px;
+            }
+            #heading{
+                margin-top: 0px;
+                font-family: 'Krona One', sans-serif;
+                
+            }
+            .user{
+                padding: 30px 0px 0px 500px;
+                border-image-width: 3px;         
+                
+            }
+            .user_text{
+                padding: 10px 0px 0px 500px;
+            }
+            #add_expense{
+                margin-left: 35px;
+                
+            }
+        </style>
+        <script>
+            /* Set the width of the sidebar to 250px (show it) */
+            function openNav() {
+                document.getElementById("mySidepanel").style.width = "220px";
+            }
+
+            /* Set the width of the sidebar to 0 (hide it) */
+            function closeNav() {
+                document.getElementById("mySidepanel").style.width = "0";
+            }
+            $(function(){
+                $("#return").click(function(){
+                    alert("expenditure added");
+                });
+            });
+        </script>
+            
+    
+    
+    
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-sm-2">    
+                <div id="mySidepanel" class="sidepanel">
+                    <a href="dashboard.html"><span class="option">DASHBOARD</span></a><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#">Profile (not avail.)</a>
+                    <a href="expenditure.html">My Expenditure</a>
+                    <a href="#">Clients (not avail.)</a>
+                    <a href="#">Contact (not avail.)</a>
+                </div>
+
+                <button class="openbtn" onclick="openNav()"><span id="btn">&#9776;</span></button>
+            </div>
+            <div class="header">
+                <div class="container"><h1 id="heading">EXPENSE MANAGEMENT SYSTEM</h1></div>
+            </div>
+        </div>
+        <div class="modal box" id="add">
+                <div class="jumbotron modal-header">
+                    <h3 class="modal-title">Create a new expense detail</h3>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <b>DATE :  </b><input type="date" name="date" id="date" required="true"><br><br>
+                        <b>CURRENCY TYPE :</b>  
+                        <select name="currency" id="currency" required="true">
+                            <option value="indian rupee">&#8377; INDIAN RUPEE</option>
+                            <option value="dollar">&#36; DOLLAR</option>
+                            <option value="cent">&#162; CENT</option>
+                            <option value="pound">&#163; POUND</option>
+                            <option value="euro">&#8364; EURO</option>
+                            <option value="yuan">&#165; YUAN</option>
+                            <option value="rubel">&#8381; RUBEL</option>
+                            <option value="franc">&#8355; FRANC</option>
+                            <option value="lira">&#8356; LIRA</option>
+                            <option value="peso">&#8369; PESO</option>
+                        </select><br><br>
+                        <b>AMOUNT : </b><input type="number" placeholder="amount" name="amount" id="amount" required="true"><br><br>
+                        <b>PURPOSE : </b><textarea rows="2" cols="50" name="purpose" required="true">Enter text here...</textarea>
+                        <a href="#" rel="modal:close"><button class="btn btn-primary" id="return">ADD</button></a>
+                    </form>
+                </div>
+        </div>
+
+        <div class="container">
+            <div>
+                <img src="https://static.thenounproject.com/png/17241-200.png" alt="user" class="user"/><br>
+                <h2 class="user_text">Welcome! User &nbsp;&nbsp;<a href="main.html"><h5 class="glyphicon glyphicon-off">Logout </h5></a></h2> 
+                <a href="#add" rel="modal:open"><button class="btn btn-block" id="add_expense">ADD EXPENSE</button></a>
+            </div>
+        </div>
+        <footer class="end1">
+            <div class="container">
+                <p align="center">Copyright © SSM TECH. All Rights Reserved | Contact Us: +91 90000 00000</p>
+            </div>
+        </footer>
+    </body>
+</html>
